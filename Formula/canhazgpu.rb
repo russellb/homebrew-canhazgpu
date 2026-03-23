@@ -9,6 +9,7 @@ class Canhazgpu < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+    bin.install_symlink "canhazgpu" => "chg"
     bash_completion.install "autocomplete_canhazgpu.sh" => "canhazgpu"
   end
 
